@@ -4,25 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Резюме — Михайло Дудас</title>
+
+  <!-- 1) EXTERNAL: зовнішній файл стилів (основна частина правил) -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- 2) INTERNAL: стилі в тезі <style> -->
+  <style>
+    footer p {
+      font-size: 0.9rem;
+      letter-spacing: 0.02em;
+    }
+  </style>
 </head>
 <body>
 
   <header>
     <h1>Михайло Дудас</h1>
-    <p>Студент спеціальності «Кібербезпека» | Початківець</p>
-    <p>
-      Email: <a href="mailto:mykhailo.dudas.kb.2025@lpnu.ua">mykhailo.dudas.kb.2025@lpnu.ua</a> | 
-      GitHub: <a href="https://github.com/Xennetn" target="_blank" rel="noopener noreferrer">github.com</a>
+    <!-- 3) INLINE: стиль безпосередньо в атрибуті style -->
+    <p style="font-size: 1.1rem; opacity: 0.9;">Студент спеціальності «Кібербезпека» | Початківець</p>
+    <p id="contacts">
+      <span>Email: <a href="mailto:mykhailo.dudas.kb.2025@lpnu.ua">mykhailo.dudas.kb.2025@lpnu.ua</a></span>
+      <span>GitHub: <a href="https://github.com/Xennetn" target="_blank" rel="noopener noreferrer">github.com</a></span>
     </p>
   </header>
 
   <main>
-    <section>
+    <section class="card">
       <h2>Про мене</h2>
       <p>Студент другого курсу. Цікавлюся базовими концепціями інформаційної безпеки, роботою комп'ютерних мереж та основами веброзробки. Набуваю практичного досвіду в процесі виконання університетських завдань.</p>
     </section>
 
-    <section>
+    <section class="card">
       <h2>Навички (початковий рівень)</h2>
       <ul>
         <li>Мови програмування: базовий синтаксис C# та Python</li>
@@ -31,7 +43,7 @@
       </ul>
     </section>
 
-    <section>
+    <section class="card">
       <h2>Освіта</h2>
       <article>
         <h3>Національний університет «Львівська політехніка»</h3>
@@ -39,7 +51,7 @@
       </article>
     </section>
 
-    <section>
+    <section class="card">
       <h2>Практичний досвід та навчальні проєкти</h2>
       <article>
         <h3>Університетські лабораторні роботи</h3>
