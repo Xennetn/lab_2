@@ -3,70 +3,82 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Резюме — Михайло Дудас</title>
-
-  <!-- 1) EXTERNAL: зовнішній файл стилів (основна частина правил) -->
+  <title>Резюме | Дудас Михайло</title>
   <link rel="stylesheet" href="styles.css">
-
-  <!-- 2) INTERNAL: стилі в тезі <style> -->
   <style>
-    footer p {
-      font-size: 0.9rem;
-      letter-spacing: 0.02em;
-    }
+    body.dark-theme { background-color: #0f172a; color: #e2e8f0; }
+    body.dark-theme .container { background-color: #1e293b; border-color: #334155; }
+    body.dark-theme .cv-article { background-color: #334155; color: #f1f5f9; border-left-color: #6366f1; }
+    body.dark-theme footer { background-color: #0f172a; color: #94a3b8; }
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); justify-content: center; align-items: center; z-index: 1000; }
+    .modal-box { background: #fff; padding: 25px; border-radius: 12px; width: 90%; max-width: 420px; position: relative; color: #1e293b; }
+    .modal-box input, .modal-box textarea { width: 100%; padding: 8px 10px; margin: 6px 0 12px 0; border: 1px solid #cbd5e1; border-radius: 6px; box-sizing: border-box; }
+    .modal-submit { width: 100%; padding: 10px; background: #4f46e5; color: #fff; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; }
+    .close-cross { position: absolute; top: 12px; right: 16px; font-size: 1.5rem; background: none; border: none; cursor: pointer; }
   </style>
 </head>
 <body>
+  <div class="container">
+    <header id="main-header" style="position: relative;">
+      <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+        <button id="open-modal-btn" style="padding: 5px 10px; cursor: pointer; border-radius: 6px; border: 1px solid #fff; background: rgba(255,255,255,0.2); color: #fff;">✉️ Форма</button>
+        <button id="theme-toggle-btn" style="padding: 5px 10px; cursor: pointer; border-radius: 6px; border: 1px solid #fff; background: rgba(255,255,255,0.2); color: #fff;">Тема День/Ніч</button>
+      </div>
+      <h1>Михайло Дудас</h1>
+      <p>Студент спеціальності «Кібербезпека» | Початківець</p>
+      <p style="margin-top: 10px; font-size: 0.9rem;">
+        Email: <a href="mailto:mykhailo.dudas.kb.2025@lpnu.ua" style="color: #93c5fd;">mykhailo.dudas.kb.2025@lpnu.ua</a> | 
+        GitHub: <a href="https://github.com/Xennetn" target="_blank" rel="noopener noreferrer" style="color: #93c5fd;">github.com/Xennetn</a>
+      </p>
+    </header>
 
-  <header>
-    <h1>Михайло Дудас</h1>
-    <!-- 3) INLINE: стиль безпосередньо в атрибуті style -->
-    <p style="font-size: 1.1rem; opacity: 0.9;">Студент спеціальності «Кібербезпека» | Початківець</p>
-    <p id="contacts">
-      <span>Email: <a href="mailto:mykhailo.dudas.kb.2025@lpnu.ua">mykhailo.dudas.kb.2025@lpnu.ua</a></span>
-      <span>GitHub: <a href="https://github.com/Xennetn" target="_blank" rel="noopener noreferrer">github.com</a></span>
-    </p>
-  </header>
+    <main class="content-area">
+      <section class="cv-section">
+        <h2>Освіта</h2>
+        <article class="cv-article">
+          <h3>Національний університет «Львівська політехніка»</h3>
+          <p>Бакалаврат за спеціальністю «Кібербезпека та захист інформації» (2025 — дотепер)</p>
+        </article>
+      </section>
 
-  <main>
-    <section class="card">
-      <h2>Про мене</h2>
-      <p>Студент другого курсу. Цікавлюся базовими концепціями інформаційної безпеки, роботою комп'ютерних мереж та основами веброзробки. Набуваю практичного досвіду в процесі виконання університетських завдань.</p>
-    </section>
+      <section class="cv-section">
+        <h2>Практичний досвід та навчальні проєкти</h2>
+        <article class="cv-article">
+          <h3>Університетські лабораторні роботи</h3>
+          <p>Написання базових програм на C# та Python, створення структурованих вебсторінок.</p>
+        </article>
+      </section>
 
-    <section class="card">
-      <h2>Навички (початковий рівень)</h2>
-      <ul>
-        <li>Мови програмування: базовий синтаксис C# та Python</li>
-        <li>Веброзробка: основи розмітки HTML5, базове знайомство з React</li>
-        <li>Інструменти: базові команди Git, робота з терміналом Linux</li>
-      </ul>
-    </section>
+      <section class="cv-section">
+        <h2>Відгуки попередніх роботодавців (Варіант 9)</h2>
+        <div id="reviews-container">Завантаження відгуків...</div>
+      </section>
+    </main>
 
-    <section class="card">
-      <h2>Освіта</h2>
-      <article>
-        <h3>Національний університет «Львівська політехніка»</h3>
-        <p>Бакалаврат за спеціальністю «Кібербезпека та захист інформації» (2025 — дотепер)</p>
-      </article>
-    </section>
+    <footer>
+      <p>&copy; 2026 Михайло Дудас. Всі права захищені.</p>
+      <p id="system-info" style="font-size: 0.8rem; margin-top: 6px;"></p>
+    </footer>
+  </div>
 
-    <section class="card">
-      <h2>Практичний досвід та навчальні проєкти</h2>
-      <article>
-        <h3>Університетські лабораторні роботи</h3>
-        <p>Написання базових скриптів і програм на C# та Python, розбір принципів роботи ОС, створення перших структурованих вебсторінок.</p>
-      </article>
-      <article>
-        <h3>Робота з контролем версій (Git)</h3>
-        <p>Ініціалізація локальних сховищ, створення комітів та публікація навчальних робіт на GitHub.</p>
-      </article>
-    </section>
-  </main>
+  <div id="contact-modal" class="modal-overlay">
+    <div class="modal-box">
+      <button id="close-cross-btn" class="close-cross" id="close-modal-btn">&times;</button>
+      <h3 style="margin-top: 0;">Форма зворотного зв'язку</h3>
+      <form action="https://formspree.io/f/xyzabcde" method="POST">
+        <label>Ім'я:</label>
+        <input type="text" name="name" required placeholder="Ваше ім'я">
+        <label>Email:</label>
+        <input type="email" name="_replyto" required placeholder="email@example.com">
+        <label>Номер телефону:</label>
+        <input type="tel" name="phone" placeholder="+380...">
+        <label>Повідомлення:</label>
+        <textarea name="message" rows="3" required placeholder="Повідомлення..."></textarea>
+        <button type="submit" class="modal-submit">Надіслати</button>
+      </form>
+    </div>
+  </div>
 
-  <footer>
-    <p>&copy; 2026 Михайло Дудас. Всі права захищені.</p>
-  </footer>
-
+  <script src="script.js"></script>
 </body>
 </html>
