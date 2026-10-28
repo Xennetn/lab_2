@@ -33,7 +33,7 @@ function ContactForm() {
         <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4">
           Форма зворотного зв'язку
         </h3>
-        <form action="https://formspree.io/f/xyzabcde" method="POST" className="space-y-3">
+        <form action="https://formspree.io/f/xppprdvj" method="POST" className="space-y-3">
           <div>
             <label className="block text-xs font-semibold text-slate-600 dark:text-slate-300 mb-1">Ім'я</label>
             <input type="text" name="name" required placeholder="Ваше ім'я" className="w-full px-3 py-2 border rounded-lg text-sm bg-slate-50 dark:bg-slate-700 dark:border-slate-600 dark:text-white" />
